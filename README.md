@@ -42,3 +42,4 @@ helm install zkvm ./infrastructure/helm
 
 _Designed for scalability, auditability, and mathematically sound Zero-Knowledge primitives._
 "# Zk-VM" 
+"# Zk-VM" 
