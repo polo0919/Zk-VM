@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package trace_stream;
+
+service ProverStream {
+    // Bi-directional stream for sending execution trace chunks (RAM-efficient)
+    rpc StreamExecutionTrace (stream TraceChunk) returns (stream ProverStatus);
+}
+
+message TraceChunk {
+    string session_id = 1;
+    uint32 chunk_index = 2;
+    bytes payload = 3; // Serialized chunk of execution steps
+    bool is_final = 4;
+}
+
+message ProverStatus {
+    string session_id = 1;
+    string job_id = 2;
+    string message = 3;
+    bool is_completed = 4;
+    bytes proof_data = 5; // Only populated on the final response
+}

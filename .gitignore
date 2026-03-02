@@ -1,0 +1,39 @@
+# Compiled output
+/target
+/dist
+/build
+
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+.pnp.*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# Environment and Secrets
+.env
+.env.local
+.aws/
+*.pem
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Infrastructure
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.tfvars
+
+# OS generated files
+.DS_Store
+Thumbs.db

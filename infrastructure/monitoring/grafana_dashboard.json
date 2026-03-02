@@ -1,0 +1,35 @@
+{
+    "title": "zkVM Executive Dashboard",
+    "panels": [
+        {
+            "title": "Proof Generation Throughput (Proofs/Day)",
+            "type": "stat",
+            "targets": [
+                {
+                    "expr": "sum(increase(proof_generation_success_total[24h]))",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "title": "Median Proof Verification Latency (ms)",
+            "type": "stat",
+            "targets": [
+                {
+                    "expr": "histogram_quantile(0.5, sum(rate(proof_verification_duration_seconds_bucket[5m])) by (le)) * 1000",
+                    "refId": "A"
+                }
+            ]
+        },
+        {
+            "title": "Estimated Cost Per Proof (USD)",
+            "type": "stat",
+            "targets": [
+                {
+                    "expr": "(sum(rate(node_cpu_seconds_total{mode!=\"idle\"}[1h])) * 0.05) / sum(rate(proof_generation_success_total[1h]))",
+                    "refId": "A"
+                }
+            ]
+        }
+    ]
+}

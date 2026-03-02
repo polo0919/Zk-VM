@@ -1,0 +1,12 @@
+[workspace]
+members = [
+    "components/compiler",
+    "components/execution-engine",
+    "components/prover-node",
+    "components/verifier-api",
+    "cryptography/primitives",
+    "cryptography/plonkish",
+    "cryptography/fri",
+    "sdks/rust-client"
+, "components/scheduler", "components/storage"]
+resolver = "2"

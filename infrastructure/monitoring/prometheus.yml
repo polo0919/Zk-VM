@@ -1,0 +1,31 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'zkvm-scheduler'
+    static_configs:
+      - targets: ['scheduler.zkvm.local:9090']
+
+  - job_name: 'zkvm-prover-nodes'
+    kubernetes_sd_configs:
+      - role: pod
+    relabel_configs:
+      - source_labels: [__meta_kubernetes_pod_label_app]
+        action: keep
+        regex: prover-node
+      - source_labels: [__meta_kubernetes_pod_annotation_prometheus_io_scrape]
+        action: keep
+        regex: true
+
+  - job_name: 'zkvm-verifier-api'
+    static_configs:
+      - targets: ['verifier.zkvm.local:9090']
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
+
+rule_files:
+  - "zkvm_alerts.yml"

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: zkvm-prover-cluster
+description: Helm chart for the distributed GPU/Enclave prover node cluster
+type: application
+version: 0.1.0
+appVersion: "1.16.0"

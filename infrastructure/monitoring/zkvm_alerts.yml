@@ -1,0 +1,29 @@
+groups:
+- name: zkVM Alerts
+  rules:
+  - alert: HighProofGenerationLatency
+    expr: histogram_quantile(0.95, sum(rate(proof_generation_duration_seconds_bucket[5m])) by (le)) > 300
+    for: 5m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High proof generation latency on prover nodes"
+      description: "95th percentile of proof generation takes longer than 5 minutes."
+
+  - alert: HighVerificationLatency
+    expr: histogram_quantile(0.99, sum(rate(proof_verification_duration_seconds_bucket[5m])) by (le)) > 0.200
+    for: 2m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Proof verification SLA breached"
+      description: "99th percentile of proof verification takes longer than 200ms."
+
+  - alert: HighProverErrorRate
+    expr: rate(proof_generation_errors_total[5m]) > 5
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "Prover cluster experiencing high failure rate"
+      description: "More than 5 proof generation failures per second."

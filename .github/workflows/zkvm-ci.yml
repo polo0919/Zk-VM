@@ -1,0 +1,47 @@
+name: zkVM Platform CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build_and_test_rust:
+    name: Build & Test (Rust Services)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install nightly Rust
+        uses: dtolnay/rust-toolchain@nightly
+      - name: Cache dependencies
+        uses: Swatinem/rust-cache@v2
+      - name: Cargo Check
+        run: cargo check --workspace --all-targets --all-features
+      - name: Run Unit Tests
+        run: cargo test --workspace
+
+  build_typescript_sdk:
+    name: Build Typescript SDK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./sdks/typescript
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm ci
+      - run: npm run build
+
+  helm_lint:
+    name: Lint Helm Charts
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Helm Lint
+        run: helm lint ./infrastructure/helm/
